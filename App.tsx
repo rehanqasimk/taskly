@@ -1,17 +1,13 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, PixelRatio } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { theme } from "./theme";
+import { ShoppingListItem } from "./components/ShoppingListItem";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.view}>
-        <Text style={styles.text}>{PixelRatio.get()}</Text>
-        <Text style={styles.text}>Hello World</Text>
-      </View>
-
-      <View style={styles.view}>
-        <Text style={styles.text}>Hello World</Text>
-      </View>
+      <ShoppingListItem name="Coffee" />
+      <ShoppingListItem name="Tea" isCompleted />
+      <ShoppingListItem name="Milk" isCompleted />
     </View>
   );
 }
@@ -19,21 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
+    backgroundColor: theme.colorWhite,
     justifyContent: "center",
-  },
-  view: {
-    width: 200,
-    height: 200,
-    backgroundColor: "lightblue",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 20,
-    marginBottom: 20,
-  },
-  text: {
-    fontSize: 20,
-    color: "darkblue",
   },
 });
